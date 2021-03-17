@@ -195,6 +195,9 @@ if __name__ == '__main__':
     psnr_y = utils.get_psnr(y_recon.astype(np.float32), target_y_u_v['y'].astype(np.float32), 0, 255)
     print(f"psnr (traced): {psnr_y}")
 
+    # save yuv (사용하고 싶을때 주석 풀기)
+    with open(f'resources/recon_traced_loaded_{str(target_POC).zfill(3)}.yuv', "wb") as f_yuv:
+        f_yuv.write(y_u_v_recon_merged.astype('uint8').tobytes())
 
 
 
