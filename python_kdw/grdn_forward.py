@@ -175,6 +175,7 @@ if __name__ == '__main__':
     netG_traced_loaded = torch.jit.load(netG_traced_dir)
     print(f"..")
 
+    print(input_y_u_v['y'].shape)
     y_recon = recon_one_channel_frame(input_y_u_v['y'], netG_traced_loaded, scale_factor=1, downupcount=2)  # 복원 영상이 np 이다.
     y_recon = recon_one_channel_frame(input_y_u_v['y'], netG_traced_loaded, scale_factor=1, downupcount=2)  # 복원 영상이 np 이다.
     y_recon = recon_one_channel_frame(input_y_u_v['y'], netG_traced_loaded, scale_factor=1, downupcount=2)  # 복원 영상이 np 이다.
