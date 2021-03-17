@@ -1,11 +1,6 @@
 #include <iostream>
-#include <memory>
 #include <string>
-//#include <stdio.h>
-#include <unistd.h>
-
 #include <torch/script.h>
-#include <torch/torch.h>
 
 
 int main() {
