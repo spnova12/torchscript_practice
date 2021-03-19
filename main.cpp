@@ -95,12 +95,18 @@ int main() {
         // uchInfoCNN 를 영상으로 저장할 수 있도록 후처리한 후 yuv_buffer_recon 버퍼에 넣어준다.
         for (int i = 0; i < iWidth * iHeight; i++)
         {
-            float p = (unsigned char) (uchInfoCNN[iCpnt][i] * 255);
-            if (p > 255)
-                p = 255;
-            if (p < 0)
-                p = 0;
-            yuv_buffer_recon[yuv_buffer_recon_idx] = p;
+            // 0,1 -> 0,255
+            float pixel = (uchInfoCNN[iCpnt][i] * 255);
+            // 반올림 (안했을 시 큰 오차가 생길 수 있음)
+            pixel = floor(pixel + 0.5);
+            // clip
+            if (pixel > 255)
+                pixel = 255;
+            if (pixel < 0)
+                pixel = 0;
+            // unsigned char 형태로 형변환
+            yuv_buffer_recon[yuv_buffer_recon_idx] = (unsigned char) pixel;
+
             yuv_buffer_recon_idx++;
         }
     }
