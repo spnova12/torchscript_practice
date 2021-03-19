@@ -11,7 +11,7 @@ traced 모델과 torch 모델이 속도가 거의 같음을 확인함.
 
 C++ 에서 traced model 을 돌려봄. python 의 결과와 다음의 차이가 있었음.
 input_c_psnr : 34.4710069960766
-input_python_psnr : 34.470999149919116
+input_python_psnr : 34.470999149919116  
 
 두 값은 0.0000078 차이가 남. 
 다른 언어기 때문에 발생하는 차이라고 생각할 수 있음??
