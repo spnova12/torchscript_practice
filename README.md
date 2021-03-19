@@ -9,7 +9,7 @@ python 에서 모델을 inference 할때 사용되는 모든 기능들이 c++ �
 또한 GPU 또한 잘 사용 됨을 확인 함. 추론 시간도 초기 한두번만 traced 모델이 더 오래걸리고,
 traced 모델과 torch 모델이 속도가 거의 같음을 확인함.    
 
-C++ 에서 traced model 을 돌려봄. python 의 결과와 다음의 차이가 있었음.
+C++ 에서 traced model 을 돌려봄. python 의 결과와 다음의 차이가 있었음.  
 input_c_psnr : 34.4710069960766
 input_python_psnr : 34.470999149919116  
 
